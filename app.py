@@ -6,8 +6,7 @@ import numpy as np
 
 st.sidebar.write("Features coming soon...")
 st.header("Mech World")
-image = Image.open(ml.jpg)
-st.image(image,use_column_width=True)
+st.image(ml.jpg,use_column_width=True)
 st.divider()
 choice = st.selectbox("select the field",["Regression","Classification"])
 if choice=='Regression':
@@ -25,7 +24,7 @@ elif choice=='Classification':
         st.write("a logistic regression model")
     elif c=='xgboost':
         st.write("a xgboost classification model")
-        load_model = pickle.load(open(r"/workspaces/Ml_app/penguin1.sav", 'rb'))
+        load_model = pickle.load(open("penguin1.sav", 'rb'))
 
         def predict(input_data):
             """Function which holds the model for prediction"""
@@ -59,13 +58,13 @@ elif choice=='Classification':
                                    body_mass_g, sex])
 
             if species=='Adelie':
-                im1 = Image.open(adelie.jpg")
+                im1 = adelie.jpg
                 st.image(im1,caption='Adelie',use_column_width=True)
             elif species=='Chinstrap':
-                im2 = Image.open(Chinstrap-penguin.webp)
+                im2 = Chinstrap-penguin.webp
                 st.image(im2,caption='Chinstrap',use_column_width=True)
             else:
-                im3 = Image.open(gentoo.jpg)
+                im3 = gentoo.jpg
                 st.image(im3, caption='Gentoo', use_column_width=True)
 
         if __name__ == '__main__':
