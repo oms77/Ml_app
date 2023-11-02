@@ -6,7 +6,8 @@ import numpy as np
 
 st.sidebar.write("Features coming soon...")
 st.header("Mech World")
-st.image(ml.jpg,use_column_width=True)
+img = Image.open(ml.jpg)
+st.image(img,use_column_width=True)
 st.divider()
 choice = st.selectbox("select the field",["Regression","Classification"])
 if choice=='Regression':
@@ -58,13 +59,13 @@ elif choice=='Classification':
                                    body_mass_g, sex])
 
             if species=='Adelie':
-                im1 = adelie.jpg
+                im1 = Image.open(adelie.jpg)
                 st.image(im1,caption='Adelie',use_column_width=True)
             elif species=='Chinstrap':
-                im2 = Chinstrap-penguin.webp
+                im2 = Image.open(Chinstrap-penguin.webp)
                 st.image(im2,caption='Chinstrap',use_column_width=True)
             else:
-                im3 = gentoo.jpg
+                im3 = Image.open(gentoo.jpg)
                 st.image(im3, caption='Gentoo', use_column_width=True)
 
         if __name__ == '__main__':
