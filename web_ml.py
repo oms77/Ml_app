@@ -2,11 +2,11 @@ import streamlit as st
 from PIL import Image
 import pickle
 import numpy as np
+import sklearn
 
 st.sidebar.write("Features coming soon...")
 st.header("Mech World")
-image = Image.open(r"C:\Users\Om sinha\Downloads\ml.jpg")
-st.image(image,use_column_width=True)
+
 st.divider()
 choice = st.selectbox("select the field",["Regression","Classification"])
 if choice=='Regression':
@@ -23,7 +23,7 @@ elif choice=='Classification':
       st.write("a logistic regression model")
    elif c=='xgboost':
       st.write("a xgboost classification model")
-      load_model = pickle.load(open(r"C:\Users\Om sinha\Downloads\penguin1.sav", 'rb'))
+      load_model = pickle.load(open(r"penguin1.sav", 'rb'))
 
       def predict(input_data):
          d = np.array(input_data)
@@ -55,14 +55,11 @@ elif choice=='Classification':
             species = predict([island, culmen_length_mm, culmen_depth_mm, flipper_length_mm, body_mass_g, sex])
 
          if species=='Adelie':
-            im1 = Image.open(r"C:\Users\Om sinha\Downloads\adelie.jpg")
-            st.image(im1,caption='Adelie',use_column_width=True)
+            st.write('Adelie')
          elif species=='Chinstrap':
-            im2 = Image.open(r"C:\Users\Om sinha\Downloads\Chinstrap-penguin.webp")
-            st.image(im2,caption='Chinstrap',use_column_width=True)
+            st.write('Chinstrap')
          else:
-            im3 = Image.open(r"C:\Users\Om sinha\Downloads\gentoo.jpg")
-            st.image(im3, caption='Gentoo', use_column_width=True)
+            st.write('Gentoo')
 
       if __name__ == '__main__':
          main()
