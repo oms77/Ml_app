@@ -22,7 +22,7 @@ elif choice=='Classification':
       st.write("a logistic regression model")
    elif c=='xgboost':
       st.write("a xgboost classification model")
-      load_model = pickle.load(open(r"penguin1.sav", 'rb'))
+      load_model = pickle.load(open("penguin1.sav", 'rb'))
 
       def predict(input_data):
          d = np.array(input_data)
