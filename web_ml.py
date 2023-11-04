@@ -2,7 +2,6 @@ import streamlit as st
 from PIL import Image
 import pickle
 import numpy as np
-import sklearn
 
 st.sidebar.write("Features coming soon...")
 st.header("Mech World")
